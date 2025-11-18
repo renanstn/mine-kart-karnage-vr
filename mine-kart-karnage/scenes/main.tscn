@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d10o5nijc51n6"]
+[gd_scene load_steps=12 format=3 uid="uid://d10o5nijc51n6"]
 
 [ext_resource type="Script" uid="uid://clds3xj18oaqn" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c5u00ycq6bjmc" path="res://scenes/vr_character.tscn" id="2_0wfyh"]
@@ -9,8 +9,24 @@
 [ext_resource type="Script" uid="uid://cxg6jg1co3fsr" path="res://scripts/towers.gd" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://ri4efucra54k" path="res://scripts/walls.gd" id="7_tipki"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tipki"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_85g3d"]
+sky_material = SubResource("ProceduralSkyMaterial_tipki")
+
+[sub_resource type="Environment" id="Environment_choun"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_85g3d")
+tonemap_mode = 2
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_o5qli")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_choun")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_0wfyh")]
 
@@ -18,16 +34,9 @@ script = ExtResource("1_o5qli")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("3_tipki")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.965926, -0.0669873, 0.25, 0, 0.965926, 0.258819, -0.258819, -0.25, 0.933013, -2, 3.5, 5)
-light_energy = 0.5
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.965926, 0.0669873, -0.25, 0, 0.965926, 0.258819, 0.258819, -0.25, 0.933013, 2, 3.5, 5)
-light_energy = 0.5
-
 [node name="Towers" parent="." instance=ExtResource("5_tbgi4")]
 script = ExtResource("6_tefeu")
 
 [node name="Walls" parent="." instance=ExtResource("6_o6xl0")]
+visible = false
 script = ExtResource("7_tipki")
