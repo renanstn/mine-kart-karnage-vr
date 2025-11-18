@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://46unlav7esy4"]
+
+[ext_resource type="PackedScene" uid="uid://b5vtlkwllu4ew" path="res://models/tower.glb" id="1_4ngb7"]
+
+[node name="Towers" type="Node3D"]
+
+[node name="tower_00" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0729, 0.917413)
+
+[node name="tower_01" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -50)
+
+[node name="tower_02" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -100)
+
+[node name="tower_03" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -150)
+
+[node name="tower_04" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -200)
+
+[node name="tower_05" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -250)
+
+[node name="tower_06" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -300)
+
+[node name="tower_07" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -350)
+
+[node name="tower_08" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -400)
+
+[node name="tower_09" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -450)
+
+[node name="tower_10" parent="." instance=ExtResource("1_4ngb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, -500)
