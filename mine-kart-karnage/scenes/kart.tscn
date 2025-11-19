@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvuryfvx0pibk"]
+
+[ext_resource type="PackedScene" uid="uid://dwu1rn7meen5p" path="res://models/kart.glb" id="1_sjnk0"]
+[ext_resource type="Script" uid="uid://sxywnm87bmpf" path="res://scripts/kart.gd" id="1_yjkmi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yjkmi"]
+size = Vector3(1, 0.922302, 1.02539)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjkmi"]
+albedo_color = Color(1, 1, 0.415686, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cysvk"]
+material = SubResource("StandardMaterial3D_yjkmi")
+size = Vector3(0.03, 0.03, 0.03)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjnk0"]
+size = Vector3(1, 0.2, 1.09351)
+
+[node name="Kart" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_yjkmi")
+
+[node name="kart" parent="CharacterBody3D" instance=ExtResource("1_sjnk0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0550232, -0.0126953)
+shape = SubResource("BoxShape3D_yjkmi")
+
+[node name="SparkEmitterRight" type="CPUParticles3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532155, -0.473871, 0.228066)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 0.9
+randomness = 0.3
+lifetime_randomness = 0.3
+mesh = SubResource("BoxMesh_cysvk")
+direction = Vector3(0, 0.5, 1)
+spread = 15.0
+initial_velocity_min = 8.0
+initial_velocity_max = 8.0
+
+[node name="SparkEmitterLeft" type="CPUParticles3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532155, -0.473871, 0.228066)
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 0.9
+randomness = 0.3
+lifetime_randomness = 0.3
+mesh = SubResource("BoxMesh_cysvk")
+direction = Vector3(0, 0.5, 1)
+spread = 15.0
+initial_velocity_min = 8.0
+initial_velocity_max = 8.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.639378, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0201416)
+shape = SubResource("BoxShape3D_sjnk0")

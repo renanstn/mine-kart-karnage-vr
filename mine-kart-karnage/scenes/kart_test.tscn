@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0nofooxq30al"]
+
+[ext_resource type="PackedScene" uid="uid://dvuryfvx0pibk" path="res://scenes/kart.tscn" id="1_bsdwr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bsdwr"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_je2eu"]
+sky_material = SubResource("ProceduralSkyMaterial_bsdwr")
+
+[sub_resource type="Environment" id="Environment_kde2n"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_je2eu")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsdwr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_je2eu"]
+material = SubResource("StandardMaterial3D_bsdwr")
+
+[node name="KartTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kde2n")
+
+[node name="Kart" parent="." instance=ExtResource("1_bsdwr")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.37755, 1.46147, 0)
+
+[node name="BlackPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-07, 0, 20, 0, 20, 0, -20, 0, -8.74228e-07, -1.70526, 0, 0)
+mesh = SubResource("QuadMesh_je2eu")
