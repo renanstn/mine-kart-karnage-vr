@@ -7,25 +7,30 @@ var jump_cut_multiplier: float = 0.4
 var max_jump_time: float = 0.10
 var jump_time := 0.0
 var is_jumping := false
-var can_emit_spark := false
 
 # Tilt variables
 var max_tilt_up: float = 12.0
 var max_tilt_down: float = -14.0
 var tilt_speed: float = 8.0
 
+# Animation / effects variables
+var was_on_floor := false
+
 
 func _physics_process(delta):
+	var on_floor_now = is_on_floor()
 	var jump_pressed = Input.is_action_just_pressed("ui_accept")
 	var jump_held = Input.is_action_pressed("ui_accept")
 	var jump_released = Input.is_action_just_released("ui_accept")
+	if on_floor_now and not was_on_floor:
+		_emit_sparks_from_wheels()
+	was_on_floor = on_floor_now
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	# Jump start
 	if jump_pressed and is_on_floor():
 		is_jumping = true
-		can_emit_spark = true
 		jump_time = 0.0
 		velocity.y = jump_force
 	# Keep jumping
@@ -41,9 +46,6 @@ func _physics_process(delta):
 		is_jumping = false
 	if velocity.y < 0:
 		is_jumping = false
-	if not is_jumping and is_on_floor() and can_emit_spark:
-		can_emit_spark = false
-		_emit_sparks_from_wheels()
 	_apply_jump_tilt(delta)
 	move_and_slide()
 
