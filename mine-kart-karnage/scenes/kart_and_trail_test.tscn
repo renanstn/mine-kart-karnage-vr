@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://bidj4xy0ktukl"]
+
+[ext_resource type="PackedScene" uid="uid://dvuryfvx0pibk" path="res://scenes/kart.tscn" id="1_6lnho"]
+[ext_resource type="PackedScene" uid="uid://b6e4qa74kt3ja" path="res://models/trail_00.glb" id="2_syo8s"]
+[ext_resource type="PackedScene" uid="uid://boigfrq55v2wi" path="res://scenes/test_setup.tscn" id="3_4okmw"]
+[ext_resource type="Script" uid="uid://biscjyktyhy7w" path="res://scripts/move_trail_test.gd" id="3_syo8s"]
+
+[node name="KartAndTrailTest" type="Node3D"]
+
+[node name="Kart" parent="." instance=ExtResource("1_6lnho")]
+
+[node name="TestSetup" parent="." instance=ExtResource("3_4okmw")]
+
+[node name="Trails" type="Node3D" parent="."]
+script = ExtResource("3_syo8s")
+
+[node name="trail_00" parent="Trails" instance=ExtResource("2_syo8s")]
+
+[node name="trail_01" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.94058)
+
+[node name="trail_02" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.8441)
+
+[node name="trail_03" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.7846)
+
+[node name="trail_04" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.6772)
+
+[node name="trail_05" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -39.6178)
+
+[node name="trail_06" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -47.5213)
+
+[node name="trail_07" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55.4619)
+
+[node name="trail_08" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -63.3127)
+
+[node name="trail_09" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.2532)
+
+[node name="trail_10" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -79.1567)
+
+[node name="trail_11" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.0973)
+
+[node name="trail_12" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -94.9899)
+
+[node name="trail_13" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -102.93)
+
+[node name="trail_14" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -110.834)
+
+[node name="trail_15" parent="Trails" instance=ExtResource("2_syo8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -118.775)

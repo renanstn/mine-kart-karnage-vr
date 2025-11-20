@@ -65,6 +65,7 @@ func _apply_jump_tilt(delta: float):
 
 
 func _emit_sparks_from_wheels():
+	$AudioJump.play()
 	$SparkEmitterRight.restart()
 	$SparkEmitterRight.emitting = true
 	$SparkEmitterLeft.restart()

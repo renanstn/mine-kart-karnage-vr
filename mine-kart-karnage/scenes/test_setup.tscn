@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://boigfrq55v2wi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pog8p"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_je2eu"]
+sky_material = SubResource("ProceduralSkyMaterial_pog8p")
+
+[sub_resource type="Environment" id="Environment_vtwp4"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_je2eu")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsdwr"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5tswh"]
+material = SubResource("StandardMaterial3D_bsdwr")
+
+[node name="TestSetup" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vtwp4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.37755, 1.46147, 0)
+
+[node name="BlackPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-07, 0, 20, 0, 20, 0, -20, 0, -8.74228e-07, -1.70526, 0, 0)
+mesh = SubResource("QuadMesh_5tswh")
