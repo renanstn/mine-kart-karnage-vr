@@ -19,9 +19,9 @@ var was_on_floor := false
 
 func _physics_process(delta):
 	var on_floor_now = is_on_floor()
-	var jump_pressed = Input.is_action_just_pressed("ui_accept")
-	var jump_held = Input.is_action_pressed("ui_accept")
-	var jump_released = Input.is_action_just_released("ui_accept")
+	var jump_pressed = Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("jump")
+	var jump_held = Input.is_action_pressed("ui_accept") or Input.is_action_pressed("jump")
+	var jump_released = Input.is_action_just_released("ui_accept") or Input.is_action_just_released("jump")
 	if on_floor_now and not was_on_floor:
 		_emit_sparks_from_wheels()
 	was_on_floor = on_floor_now

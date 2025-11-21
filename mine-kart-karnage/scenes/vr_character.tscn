@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5u00ycq6bjmc"]
+[gd_scene load_steps=4 format=3 uid="uid://c5u00ycq6bjmc"]
 
+[ext_resource type="Script" uid="uid://c3n3o3fdxyrco" path="res://scripts/vr_character.gd" id="1_0ckd6"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_o2oa5"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_0ckd6"]
 
 [node name="XROrigin3D" type="XROrigin3D"]
+script = ExtResource("1_0ckd6")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)

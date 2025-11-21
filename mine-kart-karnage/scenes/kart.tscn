@@ -50,7 +50,7 @@ initial_velocity_min = 8.0
 initial_velocity_max = 8.0
 
 [node name="SparkEmitterLeft" type="CPUParticles3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.532155, -0.473871, 0.228066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.528646, -0.473871, 0.228066)
 emitting = false
 amount = 12
 one_shot = true
